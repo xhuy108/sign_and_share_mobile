@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sign_and_share_mobile/config/routes/routes.dart';
 import 'package:sign_and_share_mobile/features/auth/views/pages/log_in_page.dart';
+import 'package:sign_and_share_mobile/features/auth/views/pages/sign_up_page.dart';
 
 class AppRouter {
   GoRouter router = GoRouter(
-    initialLocation: '/login',
+    initialLocation: '/logIn',
     routes: [
       GoRoute(
-        name: Routes.login,
-        path: '/login',
+        name: Routes.logIn,
+        path: '/logIn',
         pageBuilder: (context, state) => const MaterialPage(
           child: LogInPage(),
         ),
@@ -17,8 +18,8 @@ class AppRouter {
       GoRoute(
         name: Routes.signUp,
         path: '/signUp',
-        pageBuilder: (context, state) => MaterialPage(
-          child: Container(),
+        pageBuilder: (context, state) => const MaterialPage(
+          child: SignUpPage(),
         ),
       ),
     ],

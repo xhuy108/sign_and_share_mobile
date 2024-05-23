@@ -11,18 +11,20 @@ import 'package:sign_and_share_mobile/features/auth/views/widgets/auth_button.da
 import 'package:sign_and_share_mobile/features/auth/views/widgets/auth_input_field.dart';
 import 'package:sign_and_share_mobile/features/auth/views/widgets/social_button.dart';
 
-class LogInPage extends StatefulWidget {
-  const LogInPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<LogInPage> createState() => _LogInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LogInPageState extends State<LogInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final GlobalKey _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool _obscureText = true;
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+  bool _obscureText = true, _confirmObscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class _LogInPageState extends State<LogInPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Welcome',
+                  'Create new account',
                   style: TextStyle(
                     fontSize: 26.sp,
                     fontWeight: FontWeight.w600,
@@ -60,7 +62,7 @@ class _LogInPageState extends State<LogInPage> {
                 ),
                 Gap(12.h),
                 Text(
-                  'Enter the email and create password to associate with your account',
+                  'Enter the email and create password for your account',
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
@@ -87,6 +89,25 @@ class _LogInPageState extends State<LogInPage> {
                     },
                     icon: SvgPicture.asset(
                       _obscureText
+                          ? MediaResource.showPasswordIcon
+                          : MediaResource.hidePasswordIcon,
+                    ),
+                  ),
+                ),
+                Gap(20.h),
+                AuthInputField(
+                  hintText: 'Confirm Password',
+                  keyboardType: TextInputType.visiblePassword,
+                  controller: _confirmPasswordController,
+                  obscureText: _confirmObscureText,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _confirmObscureText = !_confirmObscureText;
+                      });
+                    },
+                    icon: SvgPicture.asset(
+                      _confirmObscureText
                           ? MediaResource.showPasswordIcon
                           : MediaResource.hidePasswordIcon,
                     ),
@@ -131,14 +152,14 @@ class _LogInPageState extends State<LogInPage> {
                 Center(
                   child: RichText(
                     text: TextSpan(
-                      text: 'Don\'t have an account? ',
+                      text: 'Already have an account? ',
                       style: TextStyle(
                         fontSize: 14.sp,
                         color: AppPalette.textPrimary.withOpacity(0.25),
                       ),
                       children: [
                         TextSpan(
-                          text: 'Sign Up',
+                          text: 'Sign In',
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: AppPalette.textPrimary,
@@ -146,7 +167,7 @@ class _LogInPageState extends State<LogInPage> {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              context.pushReplacementNamed(Routes.signUp);
+                              context.pushReplacementNamed(Routes.logIn);
                             },
                         ),
                       ],
