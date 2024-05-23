@@ -5,7 +5,7 @@ import 'package:sign_and_share_mobile/features/auth/views/pages/log_in_page.dart
 
 class AppRouter {
   GoRouter router = GoRouter(
-    initialLocation: '/',
+    initialLocation: '/login',
     routes: [
       GoRoute(
         name: Routes.login,
