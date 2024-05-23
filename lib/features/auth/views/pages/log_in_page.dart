@@ -17,6 +17,8 @@ class LogInPage extends StatefulWidget {
 
 class _LogInPageState extends State<LogInPage> {
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class _LogInPageState extends State<LogInPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Welcome Back!',
+                'Welcome',
                 style: TextStyle(
                   fontSize: 26.sp,
                   fontWeight: FontWeight.w600,
@@ -68,8 +70,21 @@ class _LogInPageState extends State<LogInPage> {
               Gap(20.h),
               AuthInputField(
                 hintText: 'Password',
-                keyboardType: TextInputType.emailAddress,
-                controller: _emailController,
+                keyboardType: TextInputType.visiblePassword,
+                controller: _passwordController,
+                obscureText: _obscureText,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                  icon: SvgPicture.asset(
+                    _obscureText
+                        ? MediaResource.showPasswordIcon
+                        : MediaResource.hidePasswordIcon,
+                  ),
+                ),
               ),
               Gap(20.h),
               AuthButton(
