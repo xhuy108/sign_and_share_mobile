@@ -7,7 +7,7 @@ class AppPalette {
   static const secondary = Color(0xFFF2F2F2);
 
   static const textPrimary = Color(0xFF000000);
-  static const textSecondary = Color(0xFF85999C);
+  static const hintText = Color(0xFFA4A4A4);
 
   static const textFieldBackground = Color(0xFFF2F2F2);
 

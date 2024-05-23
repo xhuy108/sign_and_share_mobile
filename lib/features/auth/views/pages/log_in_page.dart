@@ -60,7 +60,7 @@ class _LogInPageState extends State<LogInPage> {
                 ),
                 Gap(12.h),
                 Text(
-                  'Enter the email and create password to associate with your account',
+                  'Enter the email and create password associate with your account',
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,

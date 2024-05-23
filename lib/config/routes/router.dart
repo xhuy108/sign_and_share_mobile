@@ -3,10 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:sign_and_share_mobile/config/routes/routes.dart';
 import 'package:sign_and_share_mobile/features/auth/views/pages/log_in_page.dart';
 import 'package:sign_and_share_mobile/features/auth/views/pages/sign_up_page.dart';
+import 'package:sign_and_share_mobile/features/home/views/pages/home_page.dart';
 
 class AppRouter {
   GoRouter router = GoRouter(
-    initialLocation: '/logIn',
+    initialLocation: '/home',
     routes: [
       GoRoute(
         name: Routes.logIn,
@@ -20,6 +21,13 @@ class AppRouter {
         path: '/signUp',
         pageBuilder: (context, state) => const MaterialPage(
           child: SignUpPage(),
+        ),
+      ),
+      GoRoute(
+        name: Routes.home,
+        path: '/home',
+        pageBuilder: (context, state) => const MaterialPage(
+          child: HomePage(),
         ),
       ),
     ],
