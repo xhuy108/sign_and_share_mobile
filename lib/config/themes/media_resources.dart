@@ -9,6 +9,9 @@ class MediaResource {
   static const settingIcon = '$_baseIcons/settingIcon.svg';
   static const searchIcon = '$_baseIcons/searchIcon.svg';
   static const locationIcon = '$_baseIcons/locationIcon.svg';
+  static const likeIcon = '$_baseIcons/likeIcon.svg';
+  static const likedIcon = '$_baseIcons/likedIcon.svg';
+  static const commentIcon = '$_baseIcons/commentIcon.svg';
 
   //Auth Icons
   static const showPasswordIcon = '$_baseIcons/showPasswordIcon.svg';
@@ -22,6 +25,9 @@ class MediaResource {
 
   //IMAGE
   static const _baseImages = 'assets/images';
+
+  //Home Images
+  static const locationMap = '$_baseImages/locationMap.png';
 
   //Profile Images
   static const profileAva = '$_baseImages/profileAva.jpg';
