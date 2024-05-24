@@ -5,7 +5,10 @@ import 'package:gap/gap.dart';
 import 'package:sign_and_share_mobile/config/themes/app_pallete.dart';
 import 'package:sign_and_share_mobile/config/themes/media_resources.dart';
 import 'package:sign_and_share_mobile/features/home/views/widgets/app_search_bar.dart';
+import 'package:sign_and_share_mobile/features/home/views/widgets/community_post.dart';
 import 'package:sign_and_share_mobile/features/home/views/widgets/culture_card.dart';
+import 'package:sign_and_share_mobile/features/home/views/widgets/home_title.dart';
+import 'package:sign_and_share_mobile/features/home/views/widgets/language_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -77,29 +80,10 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {},
                 ),
                 Gap(20.h),
-                Row(
-                  children: [
-                    Text(
-                      'Popular Culture Share',
-                      style: TextStyle(
-                        fontSize: 17.sp,
-                        fontWeight: FontWeight.w700,
-                        color: AppPalette.textPrimary,
-                      ),
-                    ),
-                    const Spacer(),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'View all',
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                          color: AppPalette.hintText,
-                        ),
-                      ),
-                    ),
-                  ],
+                HomeTitle(
+                  title: 'Popular Culture Share',
+                  subtitle: 'View all',
+                  onTap: () {},
                 ),
                 Gap(14.h),
                 SizedBox(
@@ -112,7 +96,36 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Gap(20.h),
-                
+                Image.asset(MediaResource.locationMap),
+                Gap(20.h),
+                HomeTitle(
+                  title: 'Community Highlights',
+                  subtitle: 'View all',
+                  onTap: () {},
+                ),
+                Gap(14.h),
+                CommunityPost(),
+                Gap(24.h),
+                HomeTitle(
+                  title: 'Languages',
+                  subtitle: 'Explore more',
+                  onTap: () {},
+                ),
+                Gap(14.h),
+                SizedBox(
+                  height: 94.h,
+                  child: ListView.separated(
+                    clipBehavior: Clip.none,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (ctx, index) => LanguageCard(
+                      title: 'Vietnamese',
+                      onExplore: () {},
+                    ),
+                    separatorBuilder: (ctx, index) => Gap(20.w),
+                    itemCount: 5,
+                  ),
+                ),
+                Gap(10.h),
               ],
             ),
           ),
