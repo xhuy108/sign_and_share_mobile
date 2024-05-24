@@ -91,7 +91,9 @@ class _HomePageState extends State<HomePage> {
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
-                    itemBuilder: (context, index) => const CultureCard(),
+                    itemBuilder: (context, index) => CultureCard(
+                      width: 240.w,
+                    ),
                     separatorBuilder: (context, index) => Gap(20.w),
                   ),
                 ),

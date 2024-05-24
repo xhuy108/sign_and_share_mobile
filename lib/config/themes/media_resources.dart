@@ -31,4 +31,10 @@ class MediaResource {
 
   //Profile Images
   static const profileAva = '$_baseImages/profileAva.jpg';
+
+  // Function Backgroung Image
+  static const funtion1 = '$_baseImages/function1Bg.png';
+  static const funtion2 = '$_baseImages/function2Bg.png';
+  static const funtion3 = '$_baseImages/function3Bg.png';
+  static const funtion4 = '$_baseImages/function4Bg.png';
 }

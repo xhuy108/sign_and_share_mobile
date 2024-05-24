@@ -5,7 +5,9 @@ import 'package:sign_and_share_mobile/config/themes/app_pallete.dart';
 import 'package:sign_and_share_mobile/config/themes/media_resources.dart';
 
 class CultureCard extends StatelessWidget {
-  const CultureCard({super.key});
+  final double width;
+
+  const CultureCard({super.key, required this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class CultureCard extends StatelessWidget {
       children: [
         Container(
           height: 350.h,
-          width: 240.w,
+          width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.r),
             image: const DecorationImage(
