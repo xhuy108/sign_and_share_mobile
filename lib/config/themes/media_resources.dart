@@ -4,6 +4,12 @@ class MediaResource {
   //ICON
   static const _baseIcons = 'assets/icons';
 
+  //App Icons
+  static const notificationIcon = '$_baseIcons/notificationIcon.svg';
+  static const settingIcon = '$_baseIcons/settingIcon.svg';
+  static const searchIcon = '$_baseIcons/searchIcon.svg';
+  static const locationIcon = '$_baseIcons/locationIcon.svg';
+
   //Auth Icons
   static const showPasswordIcon = '$_baseIcons/showPasswordIcon.svg';
   static const hidePasswordIcon = '$_baseIcons/hidePasswordIcon.svg';
@@ -17,5 +23,6 @@ class MediaResource {
   //IMAGE
   static const _baseImages = 'assets/images';
 
-  static const onBoardingBackground = '$_baseImages/onboarding.png';
+  //Profile Images
+  static const profileAva = '$_baseImages/profileAva.jpg';
 }

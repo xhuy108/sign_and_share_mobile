@@ -1,13 +1,21 @@
+import 'package:dartz/dartz.dart';
+import 'package:sign_and_share_mobile/core/common/models/user.dart';
+import 'package:sign_and_share_mobile/core/utils/typedefs.dart';
+
 class AuthRepository {
   // TODO: Implement your authentication logic here
 
-  // Future<User> signIn(String email, String password) async {
-  //   // TODO: Implement sign in logic
-  //   // Example: Call an API to authenticate the user
-
-  //   // Return a User object if authentication is successful
-  //   return User(email: email);
-  // }
+  ResultFuture<void> signIn(String email, String password) async {
+    // TODO: Implement sign in logic
+    try {
+      return right(null) ;
+    }
+    catch (e) {
+      // Return an exception if sign in fails
+      throw Exception('Sign in failed');
+    }
+    
+  }
 
   // Future<void> signOut() async {
   //   // TODO: Implement sign out logic
